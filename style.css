@@ -3,19 +3,21 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: aquamarine;
+  background-color: rgba(103, 13, 71, 0.968);
 }
 .container{
-  background-color: blueviolet;
+  position: relative;
+  background-color: transparent;
   width: 400px;
-  height: 555px;
+  height: 60px;
+  border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
   color:white;
 }
 .search-box{
   position: relative;
-  width: 100%;
+  width: 95%;
   height: 55px;
   display: flex;
   align-items: center;
@@ -28,6 +30,13 @@ body{
   outline: none;
   color:white;
   border-radius: 10px;
+  font-size: 18px;
+  padding-left: 20px;
+}
+.search-box input::placeholder{
+  color: white;
+  font-size: 18px;
+
 }
 .search-box button{
   position: absolute;
@@ -47,6 +56,18 @@ body{
 .weather-box img{
   width:60%
 }
+.weather-box,
+.weather-details,
+.not-found
+{
+  visibility: hidden;
+}
+.weather-box.active,
+.weather-details.active,
+.not-found.active
+{
+  visibility: visible;
+}
 .weather-box .temperature{
   position:relative;
   font-size: 64px;
@@ -60,5 +81,15 @@ body{
 .weather-details{
   width: 100%;
   display: flex;
-  padding: 0px 20px;
+}
+.not-found{
+  text-align: center;
+  position: absolute;
+  top: 130px;
+  left:0;
+}
+
+.not-found img{
+  width: 50%;
+  border-radius: 10px;
 }
